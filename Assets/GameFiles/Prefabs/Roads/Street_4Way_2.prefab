@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1920837493159636545}
   - component: {fileID: 5525893162374561814}
   - component: {fileID: 1807997165353505938}
-  - component: {fileID: 614594994075423698}
-  m_Layer: 0
+  - component: {fileID: 7362900901482015312}
+  m_Layer: 3
   m_Name: Street_4Way_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5931162632948017860}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 13, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 99.999985, z: 99.999985}
+  m_LocalScale: {x: 1500, y: 1499.9999, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &5525893162374561814
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -86,8 +86,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &614594994075423698
-MeshCollider:
+--- !u!65 &7362900901482015312
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -104,7 +104,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4262782277766988360, guid: d87a22119752e0f4ead8c657e29dd7b4, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.020039067, y: 0.020039706, z: 0.002539065}
+  m_Center: {x: 0, y: 5.9211904e-19, z: 0.00024999995}

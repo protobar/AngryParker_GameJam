@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5044525902756783386}
   m_Layer: 0
   m_Name: Crate_Obs
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

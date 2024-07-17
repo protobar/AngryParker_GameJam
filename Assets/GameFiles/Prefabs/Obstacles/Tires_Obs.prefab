@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6031651564049444728}
   m_Layer: 0
   m_Name: Tires_Obs
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
