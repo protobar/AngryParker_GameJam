@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawLine: {fileID: 0}
-  speed: 2
-  rotationSpeed: 10
+  speed: 10
+  rotationSpeed: 18
 --- !u!54 &7964369207075392867
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7718335418836499102}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: f9acf013cd0b71a40a40c874375a5b51, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

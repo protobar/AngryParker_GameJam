@@ -14,19 +14,16 @@ public class CameraController : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
-
         // Set the camera to orthographic mode initially
         mainCamera.orthographic = true;
-        mainCamera.transform.position = orthographicPosition.position;
-        mainCamera.transform.rotation = orthographicPosition.rotation;
+        CameraInitialPosition();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            isPerspective = !isPerspective;
-            mainCamera.orthographic = !isPerspective;
+            ShiftCamera();
         }
 
         if (isPerspective)
@@ -41,4 +38,20 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    public void CameraInitialPosition()
+    {
+        mainCamera.transform.position = orthographicPosition.position;
+        mainCamera.transform.rotation = orthographicPosition.rotation;
+        mainCamera.orthographic = true;  // Ensure the camera is in orthographic mode
+        isPerspective = false;           // Ensure the camera mode flag is reset
+    }
+
+    public void ShiftCamera()
+    {
+        if (MoveCube.launchAllowed)
+        {
+            isPerspective = !isPerspective;
+            mainCamera.orthographic = !isPerspective;
+        }
+    }
 }

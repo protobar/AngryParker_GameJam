@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacles
   - Parking
+  - BlockLine
   layers:
   - Default
   - TransparentFX
