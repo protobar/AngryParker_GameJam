@@ -8,12 +8,18 @@ public class LevelManager : MonoBehaviour
     public GameObject currentObstacle, currentCarPos, Car;
     public List<GameObject> Obstacles,carPositions;
 
-    // Start is called before the first frame update
+    public static LevelManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        if(currentLevel != 0)
+        currentLevel = staticVariables.currentLevel;
+        if (currentLevel != 0)
         {
-            currentLevel = staticVariables.currentLevel;
             print("Lev = " + currentLevel);
             
             LoadLevelData(currentLevel);
@@ -35,9 +41,11 @@ public class LevelManager : MonoBehaviour
     {
         currentObstacle = Obstacles[level];
         currentCarPos = carPositions[level];
-
+        //print("Sent  = " + currentCarPos.name);
+        Car.SetActive(false);
         currentObstacle.SetActive(true);
         Car.transform.parent = currentCarPos.transform;
         Car.transform.localPosition = Vector3.zero;
+        Car.SetActive(true);
     }
 }

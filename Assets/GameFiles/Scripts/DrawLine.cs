@@ -17,6 +17,9 @@ public class DrawLine : MonoBehaviour
 
     void Start()
     {
+        
+        carSpawnPos = LevelManager.instance.currentCarPos;
+        //print("Got = " + carSpawnPos.name);
         carPrefab.transform.position = carSpawnPos.transform.position;
         carPrefab.transform.rotation = carSpawnPos.transform.rotation;
         lineRenderer = gameObject.AddComponent<LineRenderer>();

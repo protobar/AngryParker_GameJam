@@ -20,6 +20,7 @@ public class LevelSelector : MonoBehaviour
     public void CurrentLevelSet(int level)
     {
         staticVariables.currentLevel = level;
+        //print("got level " + staticVariables.currentLevel);
         SceneManager.LoadScene(1);
     }
 }
