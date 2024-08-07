@@ -12,6 +12,12 @@ public class MoveCube : MonoBehaviour
     private Rigidbody rb;
     public static bool launchAllowed = false; // Ensure default is false
     public static bool delayCompleted = false;
+    public float angleLimit = 45f;
+    public float jiggleForceLimit = 2000f;
+    public float jiggleTorqueLimit = 2000f;
+    public float jiggleDuration = 0.3f; // Duration of jiggle effect
+    public float jiggleFrequency = 20f; // Frequency of jiggle oscillation
+    public float jiggleReductionFactor = 0.05f; // Reduction factor for jiggle effect
 
     void Start()
     {
@@ -29,15 +35,11 @@ public class MoveCube : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("launchAllowed: " + launchAllowed);
-
-        // Check if the car should be driven based on the flag and input
         if (Input.GetKeyDown(KeyCode.Space) && launchAllowed && delayCompleted)
         {
             DriveCar();
         }
 
-        // Movement logic only if launchAllowed and points are set
         if (points.Count > 0 && targetIndex < points.Count && delayCompleted)
         {
             Vector3 targetPosition = points[targetIndex];
@@ -50,6 +52,14 @@ public class MoveCube : MonoBehaviour
             }
 
             rb.MovePosition(Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime));
+
+            // Add jiggle effect for sharp turns
+            float angle = Vector3.Angle(transform.forward, direction);
+            if (angle > angleLimit)
+            {
+                Debug.Log("Angle limit reached");
+                StartCoroutine(JiggleEffect());
+            }
 
             if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
             {
@@ -82,6 +92,20 @@ public class MoveCube : MonoBehaviour
             targetIndex = 1;
         }
     }
+
+    IEnumerator JiggleEffect()
+    {
+            // Apply a jiggle force sideways to simulate a more dramatic bounce
+            Vector3 jiggleForce = transform.up * Mathf.Sin(jiggleFrequency) * jiggleForceLimit;
+            rb.AddForce(jiggleForce, ForceMode.Impulse); // Use Impulse for a more noticeable effect
+
+            // Apply a torque around the forward axis to simulate a more dramatic tilt
+            Vector3 jiggleTorque = transform.forward * Mathf.Sin(jiggleFrequency) * jiggleTorqueLimit;
+            rb.AddTorque(jiggleTorque, ForceMode.Impulse); // Use Impulse for a more noticeable effect
+
+            yield return null;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {

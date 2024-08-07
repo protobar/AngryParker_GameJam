@@ -64628,7 +64628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       value: 2
+=======
+      value: 5
+>>>>>>> Stashed changes
 =======
       value: 5
 >>>>>>> Stashed changes
@@ -64640,11 +64644,26 @@ PrefabInstance:
       objectReference: {fileID: 963194229}
     - target: {fileID: 5749290945328112545, guid: 32dbf8d5d4b2a6648a68d82d1ac38b3b,
         type: 3}
+<<<<<<< Updated upstream
       propertyPath: rotationSpeed
 <<<<<<< Updated upstream
       value: 5
 =======
       value: 25
+>>>>>>> Stashed changes
+=======
+      propertyPath: angleLimit
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749290945328112545, guid: 32dbf8d5d4b2a6648a68d82d1ac38b3b,
+        type: 3}
+      propertyPath: jiggleForceLimit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5749290945328112545, guid: 32dbf8d5d4b2a6648a68d82d1ac38b3b,
+        type: 3}
+      propertyPath: jiggleTorqueLimit
+      value: 1
 >>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 7718335418836499102, guid: 32dbf8d5d4b2a6648a68d82d1ac38b3b,
